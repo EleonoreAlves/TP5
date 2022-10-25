@@ -1,5 +1,6 @@
 using Data;
 using Models;
+using MvcUniversity.Controllers;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +9,7 @@ builder.Services.AddDbContext<UniversityContext>();
 
 var app = builder.Build();
 
-SeedData.Init();
+//SeedData.Init();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
