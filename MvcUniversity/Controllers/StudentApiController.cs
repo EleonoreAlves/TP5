@@ -23,9 +23,29 @@ public class StudentApiController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<Student>> GetStudents(int id)
     {
-        var movie = await _context.Students.FindAsync(id);
-        if (movie == null)
+        var student = await _context.Students.FindAsync(id);
+        if (student == null)
             return NotFound();
-        return movie;
+        return student;
+    }
+    [HttpPost]
+    public async Task<ActionResult<Student>> PostMovie(Student student)
+    {
+        _context.Students.Add(student);
+        await _context.SaveChangesAsync();
+
+        return CreatedAtAction(nameof(GetStudents), new { id = student.Id }, student);
+    }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteStudent(int id)
+    {
+        var student = await _context.Students.FindAsync(id);
+        if (student == null)
+            return NotFound();
+
+        _context.Students.Remove(student);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
     }
 }
