@@ -1,0 +1,13 @@
+@{
+    string[] students = { "blue", "brown", "black" };
+}
+@if (students.Length > 0)
+{
+    <p>A few colors:</p>
+    <ul>
+    @foreach (string s in students)
+        {
+            <li>Color: @s</li>
+        }
+    </ul>
+} 
