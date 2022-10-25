@@ -6,6 +6,6 @@ public class Enrollment {
     public Grade? Grade {get;set;}
     public int StudentId{get;set;}
     public int CourseId{get;set;}
-    public Student Students {get;set;}=null!;
-    public Course Courses {get;set;}=null!;
+    public Student Student {get;set;}=null!;
+    public Course Course {get;set;}=null!;
 }

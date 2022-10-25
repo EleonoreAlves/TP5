@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Models;
 
-namespace MvcUniversity.Data;
+namespace Data;
 public class UniversityContext : DbContext
 {
     public DbSet<Course> Courses { get; set; }
