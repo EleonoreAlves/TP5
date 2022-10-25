@@ -6,6 +6,6 @@ public class Student{
     public string LastName {get;set;}=null!;
     public string FirstName {get;set;}=null!;
     public DateTime EnrollmentDate {get;set;}
-    public List<Enrollment> Enrollments {get;set;}=null!;
+    public List<Enrollment>? Enrollments {get;set;}=null!;
 
 }

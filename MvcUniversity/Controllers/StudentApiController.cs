@@ -29,7 +29,7 @@ public class StudentApiController : ControllerBase
         return student;
     }
     [HttpPost]
-    public async Task<ActionResult<Student>> PostMovie(Student student)
+    public async Task<ActionResult<Student>> PostStudent(Student student)
     {
         _context.Students.Add(student);
         await _context.SaveChangesAsync();
